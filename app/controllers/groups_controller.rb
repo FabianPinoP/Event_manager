@@ -17,11 +17,11 @@ class GroupsController < ApplicationController
       @concerts = Concert.all
     end
   
-    # GET /groups/1/edit
+    
     def edit
     end
   
-    # POST /groups or /groups.json
+    
     def create
       @group = Group.new(group_params)
   
@@ -34,7 +34,7 @@ class GroupsController < ApplicationController
       end
     end
   
-    # PATCH/PUT /groups/1 
+    
     def update
       respond_to do |format|
         if @group.update(group_params)
@@ -45,7 +45,7 @@ class GroupsController < ApplicationController
       end
     end
   
-    # DELETE /groups/1 
+    
     def destroy
       @group.destroy
       respond_to do |format|
@@ -54,12 +54,12 @@ class GroupsController < ApplicationController
     end
   
     private
-      # Use callbacks to share common setup or constraints between actions.
+     
       def set_group
         @group = Group.find(params[:id])
       end
   
-      # Only allow a list of trusted parameters through.
+     
       def group_params
         params.require(:group).permit(:name, :members, :membersgender)
       end
